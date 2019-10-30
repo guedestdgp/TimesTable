@@ -30,8 +30,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func btActionCalculate(_ sender: UIButton) {
-        numbers = [Int]()
         let number = Int(txNUmberField.text!) ?? 0
+        timesTable(number: number)
+        txNUmberField.text = nil
+        txNUmberField.resignFirstResponder()
+    }
+    
+    func timesTable(number: Int) {
+        numbers = [Int]()
+        
         for item in 1...10 {
             numbers?.append(number * item)
         }
